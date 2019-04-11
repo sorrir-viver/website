@@ -3,7 +3,7 @@ import { Row, Col, Typography } from 'antd';
 
 import homeMarca from '../../assets/img/home-marca.svg';
 import homeServico from '../../assets/img/home-servico.svg';
-import homeOrofacial from '../../assets/img/home-orofacial.png';
+import homeOrofacial from '../../assets/img/home-orofacial.jpg';
 import homeGerenciamento from '../../assets/img/home-gerenciamento.svg';
 
 import Header from '../../components/header';
