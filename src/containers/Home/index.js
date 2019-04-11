@@ -72,8 +72,8 @@ export default (props) => [
               </p>
             </div>
           </Col>
-          <Col xs={24} md={12} style={{ textAlign: 'center', height: '380px', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-            <img src={homeOrofacial} style={{ width: '380px' }} />
+          <Col xs={24} md={12} style={{ textAlign: 'center', height: '380px', display: 'flex', justifyContent: 'center' }}>
+            <img src={homeOrofacial} style={{ width: '380px', maxWidth: '100%' }} />
           </Col>
         </Col>
         <Col span={24} style={{ backgroundColor: 'rgb(247, 247, 247)', display: 'flex', justifyContent: 'center', alignItems: 'center', flexWrap: 'wrap' }}>
