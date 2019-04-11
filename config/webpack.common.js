@@ -3,6 +3,11 @@ const path = require('path'),
   HtmlWebpackPlugin = require('html-webpack-plugin'),
   ProgressBarPlugin = require('progress-bar-webpack-plugin');
 
+const ImageminPlugin = require('imagemin-webpack'),
+  imageminMozjpeg = require('imagemin-mozjpeg'),
+  imageminPngquant = require('imagemin-pngquant'),
+  imageminSvgo = require('imagemin-svgo');
+
 module.exports = (mode) => {
   return {
     devtool: 'source-map',
@@ -72,6 +77,16 @@ module.exports = (mode) => {
           use: [
             {
               loader: 'url-loader',
+            },
+            {
+              loader: ImageminPlugin.loader,
+              options: {
+                bail: false, // Ignore errors on corrupted images
+                cache: true,
+                imageminOptions: {
+                  plugins: [imageminMozjpeg(), imageminPngquant(), imageminSvgo()],
+                },
+              },
             },
           ],
         },
