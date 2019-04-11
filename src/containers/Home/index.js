@@ -3,7 +3,7 @@ import { Row, Col, Typography } from 'antd';
 
 import homeMarca from '../../assets/img/home-marca.svg';
 import homeServico from '../../assets/img/home-servico.svg';
-import homeOrofacial from '../../assets/img/home-orofacial.jpg';
+import homeOrofacial from '../../assets/img/home-orofacial.png';
 import homeGerenciamento from '../../assets/img/home-gerenciamento.svg';
 
 import Header from '../../components/header';
@@ -72,8 +72,8 @@ export default (props) => [
               </p>
             </div>
           </Col>
-          <Col xs={24} md={12} style={{ textAlign: 'center', height: '380px', display: 'flex', justifyContent: 'center' }}>
-            <img src={homeOrofacial} style={{ width: '380px', maxWidth: '100%' }} />
+          <Col xs={24} md={12} style={{ textAlign: 'center', height: '380px', display: 'flex', justifyContent: 'center', alignItems: 'flex-end' }}>
+            <img src={homeOrofacial} style={{ height: '380px', maxWidth: '100%' }} />
           </Col>
         </Col>
         <Col span={24} style={{ backgroundColor: 'rgb(247, 247, 247)', display: 'flex', justifyContent: 'center', alignItems: 'center', flexWrap: 'wrap' }}>
