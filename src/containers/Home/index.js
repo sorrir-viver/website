@@ -15,8 +15,8 @@ export default (props) => [
   <Body key="b">
     <Row style={{ width: '1200px', padding: '0 10px' }}>
       <Row type="flex">
-        <Col span={24} style={{ textAlign: 'center', padding: '30px 10px', backgroundColor: 'rgb(247, 247, 247)' }}>
-          <Typography.Title level={2} style={{ color: '#676c53f3' }}>
+        <Col span={24} style={{ textAlign: 'center', padding: '10px 10px 20px', backgroundColor: 'rgb(247, 247, 247)' }}>
+          <Typography.Title level={2} className="no-margin" style={{ color: '#676c53f3' }}>
             Descubra como nós da <br />
             <span style={{ fontSize: '30px' }}>Sorrir & Viver</span> <br />
             podemos transformar seu desempenho nos <br />
