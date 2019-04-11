@@ -72,9 +72,6 @@ module.exports = (mode) => {
           use: [
             {
               loader: 'url-loader',
-              options: {
-                limit: 8000,
-              },
             },
           ],
         },

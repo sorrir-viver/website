@@ -3,7 +3,7 @@ import { Row, Col, Typography } from 'antd';
 
 import homeMarca from '../../assets/img/home-marca.svg';
 import homeServico from '../../assets/img/home-servico.svg';
-import homeOrofacial from '../../assets/img/home-orofacial.svg';
+import homeOrofacial from '../../assets/img/home-orofacial.jpg';
 import homeGerenciamento from '../../assets/img/home-gerenciamento.svg';
 
 import Header from '../../components/header';
@@ -16,7 +16,7 @@ export default (props) => [
     <Row style={{ width: '1200px', padding: '10px' }}>
       <Row type="flex">
         <Col span={24} style={{ textAlign: 'center', margin: '30px 0px' }}>
-          <Typography.Title level={2} style={{color: "#676c53f3"}}>
+          <Typography.Title level={2} style={{ color: '#676c53f3' }}>
             Descubra como nós da <br />
             <span style={{ fontSize: '30px' }}>Sorrir & Viver</span> <br />
             podemos transformar seu desempenho nos <br />
@@ -73,7 +73,7 @@ export default (props) => [
             </div>
           </Col>
           <Col xs={24} md={12} style={{ textAlign: 'center', height: '380px', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-            <img src={homeOrofacial} />
+            <img src={homeOrofacial} style={{ width: '380px' }} />
           </Col>
         </Col>
         <Col span={24} style={{ backgroundColor: 'rgb(247, 247, 247)', display: 'flex', justifyContent: 'center', alignItems: 'center', flexWrap: 'wrap' }}>
