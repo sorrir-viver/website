@@ -9,10 +9,20 @@ import 'antd/dist/antd.min.css';
 
 import Home from './containers/Home';
 
+// https://reacttraining.com/react-router/web/guides/server-rendering/404-401-or-any-other-status
+const HttpStatus = ({ code, children }) => (
+  <Route
+    render={({ staticContext }) => {
+      if (staticContext) staticContext.status = code;
+      return children;
+    }}
+  />
+);
+
 const NotFound = () => (
   <HttpStatus code={404}>
     <div>
-      <h1>Sorry, can’t find that.</h1>
+      <h3>Desculpe, não consigo encontrar a página solicitada.</h3>
     </div>
   </HttpStatus>
 );
