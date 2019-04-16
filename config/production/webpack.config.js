@@ -38,8 +38,8 @@ module.exports = (mode) => {
       new S3Plugin({
         directory: 'www',
         s3Options: {
-          accessKeyId: 'AKIAJUIU62K6SBHWPBRA',
-          secretAccessKey: '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',
+          accessKeyId: 'AKIAT6H6ASAMQG25FAH3',
+          secretAccessKey: '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',
           region: 'us-east-1',
         },
         s3UploadOptions: {

@@ -35,6 +35,7 @@ a {
   text-decoration: none !important;
   color: rgba(0, 0, 0, 0.65) !important;
 }
+.link:hover,
 a:hover {
   font-weight: 600 !important;
   color: #1890ff !important;
@@ -64,9 +65,16 @@ h3.ant-typography {
   margin: 16px 0px 10px !important;
 }
 
-@media (max-width: 768px) {
-  .hide-on-mobile {
+@media (max-width: 576px) {
+  .hide-on-xs {
     display: none !important;
   }
 }
-
+@media (max-width: 768px) {
+  .hide-on-md {
+    display: none !important;
+  }
+  .show-on-md {
+    display: inline-block !important;
+  }
+}
