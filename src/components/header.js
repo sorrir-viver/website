@@ -187,7 +187,7 @@ export default function(props) {
               <Dropdown overlay={menuServices(props, user)}>
                 <div style={{ cursor: 'pointer', display: 'inline' }}>
                   <strong className="link" style={{ fontSize: '16px' }}>
-                    Serviços <Icon type="down" />
+                    Serviços <Icon type="down" style={{ fontSize: '10px' }} />
                   </strong>
                 </div>
               </Dropdown>
@@ -196,7 +196,7 @@ export default function(props) {
               <Dropdown overlay={menuSoftwares(props, user)}>
                 <div style={{ cursor: 'pointer', display: 'inline' }}>
                   <strong className="link" style={{ fontSize: '16px' }}>
-                    Softwares <Icon type="down" />
+                    Softwares <Icon type="down" style={{ fontSize: '10px' }} />
                   </strong>
                 </div>
               </Dropdown>
