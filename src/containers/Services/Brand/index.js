@@ -48,6 +48,7 @@ export default (props) => [
               height: '300px',
               display: 'flex',
               justifyContent: 'center',
+              textAlign: 'center',
             }}>
             <Typography.Title level={3}>A importância da Marca</Typography.Title>
           </Col>
@@ -71,6 +72,7 @@ export default (props) => [
               height: '300px',
               display: 'flex',
               justifyContent: 'center',
+              textAlign: 'center',
             }}>
             <Typography.Title level={3}>A importância do Registro</Typography.Title>
           </Col>
@@ -81,6 +83,7 @@ export default (props) => [
               height: '300px',
               display: 'flex',
               justifyContent: 'center',
+              textAlign: 'center',
             }}>
             <Typography.Title level={3}>Por que ter assesoria?</Typography.Title>
           </Col>
@@ -91,6 +94,7 @@ export default (props) => [
               height: '300px',
               display: 'flex',
               justifyContent: 'center',
+              textAlign: 'center',
             }}>
             <Typography.Title level={3}>Etapas</Typography.Title>
           </Col>
