@@ -14,6 +14,8 @@ export default function(props) {
         width: '100%',
         padding: '0 10px',
       }}>
+
+      
       <Row style={{ width: '1200px', padding: '10px 0', alignItems: 'center', display: 'flex' }}>
         <Col span={24} style={{ alignItems: 'center', display: 'flex' }}>
           <div>

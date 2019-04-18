@@ -16,6 +16,8 @@ module.exports = (mode) => {
     output: {
       path: path.resolve(__dirname, '../www', 'assets/js/'),
       filename: '[hash:12].js',
+      // https://stackoverflow.com/questions/34620628/htmlwebpackplugin-injects-relative-path-files-which-breaks-when-loading-non-root
+      publicPath: mode === 'development' ? '/' : '/assets/js/',
       chunkFilename: '[chunkhash:12].js',
     },
     optimization: {

@@ -8,6 +8,7 @@ import './assets/css/style.css';
 import 'antd/dist/antd.min.css';
 
 import Home from './containers/Home';
+import Brand from './containers/Services/Brand';
 
 // https://reacttraining.com/react-router/web/guides/server-rendering/404-401-or-any-other-status
 const HttpStatus = ({ code, children }) => (
@@ -33,6 +34,7 @@ const Routes = () => (
   <BrowserRouter>
     <Switch>
       <Route exact path="/" component={Home} />
+      <Route exact path="/services/brand" component={Brand} />
       <Route component={NotFound} />
     </Switch>
   </BrowserRouter>

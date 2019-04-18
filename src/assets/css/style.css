@@ -19,14 +19,14 @@ body,
   padding: 0;
   height: 100%;
   font-family: 'Montserrat';
-  font-size: 13px;
+  /* font-size: 13px; */
   color: rgba(0, 0, 0, 0.65);
 }
 li {
   list-style: none;
   display: flex;
   align-items: center;
-  font-size: 13px !important;
+  /* font-size: 13px !important; */
 }
 ul {
   padding-left: 0px;
@@ -34,6 +34,11 @@ ul {
 a {
   text-decoration: none !important;
   color: rgba(0, 0, 0, 0.65) !important;
+}
+.link-no-hover:hover,
+.link-no-hover:visited {
+  color: rgba(0, 0, 0, 0.65) !important;
+  font-weight: 100;
 }
 .link:hover,
 a:hover {
@@ -49,7 +54,7 @@ a:hover {
 }
 *[class^='ant-'] {
   font-family: 'Montserrat' !important;
-  font-size: 13px !important;
+  /* font-size: 13px !important; */
 }
 
 h1.ant-typography {
@@ -68,6 +73,9 @@ h3.ant-typography {
 @media (max-width: 576px) {
   .hide-on-xs {
     display: none !important;
+  }
+  .show-on-xs {
+    display: inline-block !important;
   }
 }
 @media (max-width: 768px) {
