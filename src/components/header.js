@@ -210,11 +210,11 @@ export default function(props) {
           </div>
           <div style={{ marginLeft: 'auto' }}>
             <div style={{ display: 'inline-block', marginLeft: '5px' }}>
-              <a href="https://account.sorrir-viver.com.br/signin?continue=/https%3A%2F%2Fsorrir-viver.com.br" style={{ marginRight: '5px' }}>
+              <a href="https://account.sorrir-viver.com.br/p/signin?continue=/https%3A%2F%2Fsorrir-viver.com.br" style={{ marginRight: '5px' }}>
                 <strong style={{ color: '#1890ff', fontSize: '16px' }}>Entre</strong>
               </a>
               <span>ou</span>
-              <a href="https://account.sorrir-viver.com.br/signup?continue=/https%3A%2F%2Fsorrir-viver.com.br" style={{ marginLeft: '5px' }}>
+              <a href="https://account.sorrir-viver.com.br/p/signup?continue=/https%3A%2F%2Fsorrir-viver.com.br" style={{ marginLeft: '5px' }}>
                 <strong style={{ color: '#1890ff', fontSize: '16px' }}>Cadastre-se</strong>
               </a>
 
