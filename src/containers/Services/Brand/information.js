@@ -101,7 +101,7 @@ class modalInformation extends React.Component {
               </Form.Item>
             </Col>
 
-            <Col span={12}>
+            <Col span={12} style={{ paddingRight: '5px' }}>
               <Form.Item>
                 {getFieldDecorator('nameComplete', {
                   rules: [{ required: true, message: 'Este campo é necessário' }],
