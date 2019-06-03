@@ -1,6 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import { Row, Col, Typography, Form, Button, Select, Input, Icon, InputNumber, Modal } from 'antd';
-import renderEmpty from 'antd/lib/config-provider/renderEmpty';
+import React from 'react';
+import { Row, Col, Form, Button, Input, Icon, InputNumber, Modal } from 'antd';
 
 class modalInformation extends React.Component {
   state = {
@@ -13,17 +12,41 @@ class modalInformation extends React.Component {
     form.validateFieldsAndScroll((err, values) => {
       if (!err) {
         const self = this;
+        const { brandName, brandActivity, nameComplete, mobileNumber, email } = self.state;
+
         self.setState({ loading: true, action: 'Enviando Pesquisa...' });
 
         const edgar = new Promise((resolve, reject) => {
-          setTimeout(function() {
-            resolve(true);
-            // reject('error');
-          }, 5000);
+          fetch('https://api.emailjs.com/api/v1.0/email/send', {
+            method: 'POST',
+            headers: {
+              Accept: 'application/json',
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+              service_id: 'amazon_ses',
+              template_id: 'template_4KsrVQ06',
+              user_id: 'user_GNJrmgrXvk9f9ZtPKUEEc',
+              template_params: {
+                brandName: brandName,
+                brandActivity: brandActivity,
+                nameComplete: nameComplete,
+                mobileNumber: mobileNumber,
+                email: email,
+              },
+            }),
+          }).then(
+            (response) => {
+              resolve(response);
+            },
+            (error) => {
+              reject(error);
+            }
+          );
         });
 
         edgar.then(
-          (value) => {
+          (response) => {
             self.setState({ loading: false, disabled: true, action: 'Pesquisa enviada com Sucesso!' });
 
             setTimeout(() => {
@@ -32,8 +55,8 @@ class modalInformation extends React.Component {
               self.setState({ loading: false, action: 'Realizar minha Pesquisar', disabled: false });
             }, 2000);
           },
-          (reason) => {
-            console.log(reason);
+          (error) => {
+            console.log(error);
           }
         );
       }
@@ -48,6 +71,7 @@ class modalInformation extends React.Component {
     return (
       <Modal
         closable={false}
+        centered={true}
         title="Formulario de Pesquisa"
         visible={visible}
         footer={[
@@ -62,18 +86,33 @@ class modalInformation extends React.Component {
             this.onSubmit(this.props.form);
           }}>
           <Row>
-            <Col span={12} style={{ paddingRight: '5px' }}>
+            <Col span={14} style={{ paddingRight: '5px' }}>
               <Form.Item>
-                {getFieldDecorator('nameFirst', {
+                {getFieldDecorator('brandName', {
                   rules: [{ required: true, message: 'Este campo é necessário' }],
-                })(<Input type="text" prefix={<Icon type="user" />} placeholder="Nome" onChange={(e) => this.setState({ nameFirst: e.target.value })} />)}
+                })(<Input type="text" prefix={<Icon type="shop" />} placeholder="Nome da Marca" onChange={(e) => this.setState({ brandName: e.target.value })} />)}
+              </Form.Item>
+            </Col>
+            <Col span={10} style={{ paddingLeft: '5px' }}>
+              <Form.Item>
+                {getFieldDecorator('brandActivity', {
+                  rules: [{ required: true, message: 'Este campo é necessário' }],
+                })(<Input type="text" prefix={<Icon type="appstore" />} placeholder="Ramo de Atividade" onChange={(e) => this.setState({ brandActivity: e.target.value })} />)}
+              </Form.Item>
+            </Col>
+
+            <Col span={12}>
+              <Form.Item>
+                {getFieldDecorator('nameComplete', {
+                  rules: [{ required: true, message: 'Este campo é necessário' }],
+                })(<Input type="text" prefix={<Icon type="user" />} placeholder="seu Nome" onChange={(e) => this.setState({ nameComplete: e.target.value })} />)}
               </Form.Item>
             </Col>
             <Col span={12} style={{ paddingLeft: '5px' }}>
               <Form.Item>
-                {getFieldDecorator('nameLast', {
+                {getFieldDecorator('mobileNumber', {
                   rules: [{ required: true, message: 'Este campo é necessário' }],
-                })(<Input type="text" prefix={<Icon type="user" />} placeholder="Sobrenome" onChange={(e) => this.setState({ nameLast: e.target.value })} />)}
+                })(<Input type="text" prefix={<Icon type="phone" />} placeholder="DDD + WhatsApp" onChange={(e) => this.setState({ mobileNumber: e.target.value })} />)}
               </Form.Item>
             </Col>
 
@@ -82,36 +121,6 @@ class modalInformation extends React.Component {
                 {getFieldDecorator('email', {
                   rules: [{ required: true, message: 'Este campo é necessário' }],
                 })(<Input type="text" prefix={<Icon type="mail" />} placeholder="Email" onChange={(e) => this.setState({ email: e.target.value })} />)}
-              </Form.Item>
-            </Col>
-
-            <Col span={12} style={{ paddingRight: '5px' }}>
-              <Form.Item>
-                {getFieldDecorator('brandName', {
-                  rules: [{ required: true, message: 'Este campo é necessário' }],
-                })(<Input type="text" prefix={<Icon type="shop" />} placeholder="Nome da Marca" onChange={(e) => this.setState({ brandName: e.target.value })} />)}
-              </Form.Item>
-            </Col>
-            <Col span={12} style={{ paddingLeft: '5px' }}>
-              <Form.Item>
-                {getFieldDecorator('brandActive', {
-                  rules: [{ required: true, message: 'Este campo é necessário' }],
-                })(<Input type="text" prefix={<Icon type="appstore" />} placeholder="Ramo de Atividade" onChange={(e) => this.setState({ brandActive: e.target.value })} />)}
-              </Form.Item>
-            </Col>
-
-            <Col span={12} style={{ paddingRight: '5px' }}>
-              <Form.Item>
-                {getFieldDecorator('mobileNumber', {
-                  rules: [{ required: true, message: 'Este campo é necessário' }],
-                })(<Input type="text" prefix={<Icon type="phone" />} placeholder="DDD + Telefone Celular" onChange={(e) => this.setState({ mobileNumber: e.target.value })} />)}
-              </Form.Item>
-            </Col>
-            <Col span={12} style={{ paddingLeft: '5px' }}>
-              <Form.Item>
-                {getFieldDecorator('fixedNumber', {
-                  rules: [{ required: true, message: 'Este campo é necessário' }],
-                })(<Input type="text" prefix={<Icon type="phone" />} placeholder="DDD + Telefone Fixo" onChange={(e) => this.setState({ fixedNumber: e.target.value })} />)}
               </Form.Item>
             </Col>
 

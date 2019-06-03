@@ -19,7 +19,7 @@ export default (props) => {
         <Row type="flex">
           <Col span={24} style={{ textAlign: 'center', padding: '10px', backgroundColor: 'rgb(247, 247, 247)' }}>
             <Typography.Title level={1} className="no-margin" style={{ color: '#676c53f3' }}>
-              <img src={brandMarca} style={{ height: '126px', paddingRight: '20px' }} /> Registre sua Marca
+              <img src={brandMarca} style={{ height: '126px' }} /> <br/> Registre sua Marca
             </Typography.Title>
           </Col>
           <Col span={24} style={{ textAlign: 'center', padding: '10px' }}>
