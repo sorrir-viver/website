@@ -159,7 +159,7 @@ export default (props) => {
             </Col>
 
             <Col span={24} style={{ margin: '0 0 40px', textAlign: 'center' }}>
-              <Button type="primary" icon="copyright" style={{ fontSize: '30px', height: 'unset', marginTop: '20px', padding: '10px 20px' }}>
+              <Button type="primary" icon="copyright" onClick={(e) => setInformationVisible(true)} style={{ fontSize: '30px', height: 'unset', marginTop: '20px', padding: '10px 20px' }}>
                 <span className="show-on-xs" style={{ display: 'none' }}>
                   Registre agora!
                 </span>
